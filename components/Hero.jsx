@@ -1,7 +1,8 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import Image from "next/image"
+import Image from "next/image";
+import Link from "next/link";
 
 function StatusIndicator() {
   const [time, setTime] = useState("")
@@ -329,14 +330,14 @@ export default function Hero() {
 
                 {/* CTA and metadata row */}
                 <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
-                  <a
+                  <Link
                     href="#contact"
                     className="group inline-flex items-center gap-3 border border-white bg-transparent px-8 py-4 font-mono text-xs tracking-[0.25em] uppercase text-white transition-colors duration-0 hover:bg-white hover:text-black"
                     style={{ borderRadius: 0 }}
                   >
                     Initiate Protocol
                     <ArrowRightIcon />
-                  </a>
+                  </Link>
 
                   <div className="flex items-center gap-4 font-mono text-[10px] tracking-widest uppercase text-[#8C8C8C]">
                     <span className="h-px w-4 bg-[#4A4A4A]/40" />

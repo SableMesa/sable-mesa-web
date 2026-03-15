@@ -69,8 +69,8 @@ export default function Navbar() {
             className={`font-semibold text-sm tracking-wide transition-colors ${
               isScrolled ? "text-black" : "text-white"
             } ml-2`}
-          >
-            <Image src="/assets/cropped_black_logo_text.png" alt="Sable Mesa" width="120" height="30"></Image>
+          >  
+          {isScrolled ? <Image src="/assets/cropped_logo_text_light.png" alt="Sable Mesa" width="120" height="30"></Image> : <Image src="/assets/cropped_black_logo_text.png" alt="Sable Mesa" width="120" height="30"></Image>}
           </Link>
 
           {/* Nav Links */}
