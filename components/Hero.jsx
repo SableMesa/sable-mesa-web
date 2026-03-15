@@ -275,18 +275,18 @@ export default function Hero() {
         {/* Content layer */}
         <div className="relative z-10 flex min-h-screen flex-col">
           {/* Top bar */}
-          <header className="flex items-center justify-between px-6 pt-6 lg:px-12 lg:pt-10">
+          {/* <header className="flex items-center justify-between px-6 pt-6 lg:px-12 lg:pt-10">
             <div className="flex items-center gap-3">
               <div className="flex h-8 w-8 items-center justify-center border border-white">
                 <div className="h-3 w-3 bg-white" />
               </div>
-              <Image src="/assets/cropped_black_logo_text.png" alt="Sable Mesa" width={120} height={32} brightness={200} />
-              {/* <span className="font-mono text-xs tracking-[0.3em] uppercase text-white">
+              <Image src="/assets/cropped_black_logo_text.png" alt="Sable Mesa" width={120} height={32} brightness={200} /> 
+              <span className="font-mono text-xs tracking-[0.3em] uppercase text-white">
                 Sable Mesa
-              </span> */}
+              </span>
             </div>
             <StatusIndicator />
-          </header>
+          </header> */}
 
           {/* Spec labels - left edge */}
           <div
@@ -302,7 +302,7 @@ export default function Hero() {
 
           {/* Main content */}
           <div className="flex flex-1 items-center px-6 lg:px-12">
-            <div className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-2">
+            <div className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-2 mt-auto">
               {/* Left column - Text content */}
               <div className="flex flex-col gap-8 py-20 lg:py-0">
                 {/* Technical tag */}
@@ -369,12 +369,12 @@ export default function Hero() {
 
                 {/* Tech label */}
                 <div
-                  className="absolute right-0 top-8 font-mono text-[10px] tracking-[0.3em] uppercase text-[#4A4A4A]/50"
+                  className="absolute right-0 top-0 font-mono text-[10px] tracking-[0.3em] uppercase text-[#4A4A4A]/50"
                   aria-hidden="true"
                 >
                   Render.01
+                  <StatusIndicator/>
                 </div>
-
                 <WireframeMesa />
               </div>
             </div>
