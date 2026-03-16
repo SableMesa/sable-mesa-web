@@ -92,7 +92,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <form action="https://formspree.io/f/mqeyyled" method="POST" onSubmit={handleSubmit} className="flex flex-col gap-6">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
               <label htmlFor="name" className="font-mono text-xs tracking-widest text-[#8C8C8C] uppercase">
                 &gt; Identifier [Name]
