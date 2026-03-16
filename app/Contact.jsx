@@ -1,12 +1,17 @@
 "use client"
 
 import { useState } from "react"
+import { useForm, ValidationError } from '@formspree/react';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [status, setStatus] = useState("IDLE")
-
-  const handleSubmit = (e) => {
+  const [state, handleSubmit] = useForm("mqeyyled");
+  if (state.succeeded) {
+      return <p>Thanks for joining!</p>;
+    }
+  
+    handleSubmit = (e) => {
     e.preventDefault()
     setStatus("PROCESSING")
     // Simulate network request
@@ -92,7 +97,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <form action="https://formspree.io/f/mqeyyled" method="POST" onSubmit={handleSubmit} className="flex flex-col gap-6">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
             <div className="flex flex-col gap-2">
               <label htmlFor="name" className="font-mono text-xs tracking-widest text-[#8C8C8C] uppercase">
                 &gt; Identifier [Name]
@@ -105,6 +110,11 @@ export default function Contact() {
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="border border-[#333333] bg-transparent px-4 py-3 font-mono text-sm text-white transition-colors focus:border-white focus:outline-none"
                 placeholder="ENTER_NAME..."
+              />
+              <ValidationError 
+                prefix="Name" 
+                field="name"
+                errors={state.errors}
               />
             </div>
 
@@ -121,6 +131,11 @@ export default function Contact() {
                 className="border border-[#333333] bg-transparent px-4 py-3 font-mono text-sm text-white transition-colors focus:border-white focus:outline-none"
                 placeholder="ENTER_EMAIL..."
               />
+              <ValidationError 
+                prefix="Email" 
+                field="email"
+                errors={state.errors}
+              />
             </div>
 
             <div className="flex flex-col gap-2">
@@ -135,6 +150,11 @@ export default function Contact() {
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className="resize-none border border-[#333333] bg-transparent px-4 py-3 font-mono text-sm text-white transition-colors focus:border-white focus:outline-none"
                 placeholder="ENTER_MESSAGE..."
+              />
+              <ValidationError 
+                prefix="Message" 
+                field="message"
+                errors={state.errors}
               />
             </div>
 
@@ -153,7 +173,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                disabled={status === "PROCESSING" || status === "TRANSMITTED"}
+                disabled={status === "PROCESSING" || status === "TRANSMITTED" && state.submitting}
                 className="group relative inline-flex items-center gap-3 border border-white bg-black px-8 py-3 font-mono text-xs tracking-[0.25em] uppercase text-white transition-all hover:bg-white hover:text-black disabled:opacity-50 disabled:hover:bg-white disabled:hover:text-black"
                 style={{ borderRadius: 0 }}
               >
