@@ -302,7 +302,7 @@ export default function Hero() {
           </div>
 
           {/* Main content */}
-          <div className="flex flex-1 items-center px-6 lg:px-12">
+          <div className="flex flex-1 items-center px-6 lg:px-12 lg:mt-5">
             <div className="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-2 mt-auto">
               {/* Left column - Text content */}
               <div className="flex flex-col gap-8 py-20 lg:py-0">
@@ -349,7 +349,7 @@ export default function Hero() {
               </div>
 
               {/* Right column - Wireframe mesa visual */}
-              <div className="relative hidden h-[500px] lg:block xl:h-[600px]">
+              <div className="relative hidden h-[500px] lg:block lg:mt-[20%] xl:h-[600px]">
                 {/* Corner brackets */}
                 <div
                   className="absolute left-0 top-0 h-6 w-6 border-l border-t border-white/10"
